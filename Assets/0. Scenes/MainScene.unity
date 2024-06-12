@@ -1625,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523a7ff6f20b8964dbb634bc6d03f745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterName: Mage
+  SelectedPlayer: 0
   UserID: 
   PlayerHP: 100
   PlayerExp: 1

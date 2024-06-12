@@ -74,10 +74,11 @@ public class Monster : MonoBehaviour
         GameManager.Instance.PlayerExp += MonsterExp;
 
         GetComponent<Collider2D>().enabled = false;
+        Invoke("CreateItem", 1.5f);
         Destroy(gameObject, 1.5f);
     }
 
-    private void OnDestroy()
+    private void CreateItem()
     {
         int itemRandom = Random.Range(0, ItemObj.Length * 2);
         if (itemRandom < ItemObj.Length)

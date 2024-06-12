@@ -13,6 +13,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             playerObj = GameObject.FindGameObjectWithTag("Player");
         }
-        transform.position = new Vector3(playerObj.transform.position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(playerObj.transform.position.x, playerObj.transform.position.y, transform.position.z);
     }
 }
