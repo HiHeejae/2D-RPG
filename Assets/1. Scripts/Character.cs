@@ -69,7 +69,7 @@ public class Character : MonoBehaviour
     {
         if (isFloor)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 rigidbody2d.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
                 animator.SetTrigger("Jump");
@@ -124,7 +124,7 @@ public class Character : MonoBehaviour
 
     private void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             animator.SetTrigger("Attack");
 

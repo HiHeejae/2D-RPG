@@ -34,7 +34,7 @@ public class SelectCharacter : MonoBehaviour
             gameCount -= Time.deltaTime;
             if (gameCount <= 0)
             {
-                SceneManager.LoadScene("MainScene");
+                SceneManager.LoadScene("3Mario");
             }
             GameCountTxt.text = $"곧 게임이 시작됩니다. \n {gameCount:F1}";
         }
