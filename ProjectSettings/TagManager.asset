@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Floor
   - Ladder
+  - Coin
+  - HP
+  - Attack
+  - Teleporter
+  - Speed
   layers:
   - Default
   - TransparentFX

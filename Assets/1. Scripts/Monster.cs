@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Monster : MonoBehaviour
 
     public float MoveSpeed = 3f;
     public GameObject[] ItemObj;
+
+
 
     private Animator MonsterAnimator;
 
@@ -76,6 +79,8 @@ public class Monster : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         Invoke("CreateItem", 1.5f);
         Destroy(gameObject, 1.5f);
+
+        PlayerUI.Instance.monsterCount--;
     }
 
     private void CreateItem()

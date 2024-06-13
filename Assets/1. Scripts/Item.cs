@@ -11,7 +11,7 @@ public class Item : MonoBehaviour
         {
             if (gameObject.tag == "Coin")
             {
-                GameManager.Instance.Coin += 10;
+                GameManager.Instance.Coin += 3000;
                 Debug.Log("Player Coin : " + GameManager.Instance.Coin);
                 Destroy(gameObject);
             }
@@ -21,6 +21,13 @@ public class Item : MonoBehaviour
                 Debug.Log("Player Coin : " + GameManager.Instance.PlayerHP);
                 Destroy(gameObject);
             }
+            else if (gameObject.tag == "Speed")
+            {
+                Character.Instance.Speed += 3;
+                Destroy(gameObject);
+            }
+
+
         }
     }
 }

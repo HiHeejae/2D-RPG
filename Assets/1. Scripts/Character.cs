@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
@@ -10,6 +9,8 @@ public class Character : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rigidbody2d;
     private AudioSource audioSource;
+    public static Character Instance;
+
 
     public AudioClip JumpClip;
 
@@ -172,6 +173,16 @@ public class Character : MonoBehaviour
         {
             isLadder = false;
             isClimbing = false;
+        }
+    }
+
+
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
         }
     }
 }
