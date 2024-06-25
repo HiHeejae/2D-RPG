@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CameraPos : MonoBehaviour
 {
     private GameObject playerObj;
 
@@ -13,6 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             playerObj = GameObject.FindGameObjectWithTag("Player");
         }
-        transform.position = new Vector3(playerObj.transform.position.x, playerObj.transform.position.y, transform.position.z);
+        else
+            transform.position = new Vector3(playerObj.transform.position.x, playerObj.transform.position.y, transform.position.z);
     }
 }

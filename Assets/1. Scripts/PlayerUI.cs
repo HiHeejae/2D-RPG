@@ -11,44 +11,23 @@ public class PlayerUI : MonoBehaviour
 
     public Slider HPSlider;
 
-    private GameObject player;
+    public GameObject player;
     public GameObject spawnPos;
-    public Text GoldText;
 
-    public Text monsterTxt;
-
-    public int monsterCount;
-
-    void Start()
+    private void Start()
     {
         IdText.text = GameManager.Instance.UserID;
         player = GameManager.Instance.SpawnPlayer(spawnPos.transform);
-        monsterTxt.text = $"남은 몬스터 수 : {monsterCount}마리";
     }
 
-    void Update()
-    {
-        display();
-        GoldText.text =  $"{GameManager.Instance.Coin}";
-        monsterTxt.text = $"남은 몬스터 수 : {monsterCount}마리";
-    }
-    
-    
-    private void display()
+    private void Display()
     {
         CharacterImg.sprite = player.GetComponent<SpriteRenderer>().sprite;
         HPSlider.value = GameManager.Instance.PlayerHP;
     }
 
-    public static PlayerUI Instance;
-
-    private void Awake()
+    private void Update()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
+        Display();
     }
-
-
 }

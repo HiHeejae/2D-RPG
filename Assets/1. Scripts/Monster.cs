@@ -80,7 +80,6 @@ public class Monster : MonoBehaviour
         Invoke("CreateItem", 1.5f);
         Destroy(gameObject, 1.5f);
 
-        PlayerUI.Instance.monsterCount--;
     }
 
     private void CreateItem()

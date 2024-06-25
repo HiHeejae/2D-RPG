@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public Define.Player SelectedPlayer;
     public string UserID;
+    public GameObject player;
 
     public float PlayerHP = 100f;
     public float PlayerExp = 1f;
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
     public GameObject SpawnPlayer(Transform spawnPos)
     {
         GameObject playerPrefab = Resources.Load<GameObject>("Characters/" + SelectedPlayer.ToString());
-        GameObject player = Instantiate(playerPrefab, spawnPos.position, spawnPos.rotation);
+        player = Instantiate(playerPrefab, spawnPos.position, spawnPos.rotation);
 
         return player;
     }

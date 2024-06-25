@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 2310381818215940044}
   - component: {fileID: 5935085194601726071}
   - component: {fileID: 6799177079783843295}
-  - component: {fileID: 7710841460677656361}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Player
@@ -430,15 +429,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackDamage: 5
---- !u!114 &7710841460677656361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389622261859571560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0bd0d83ff5abcf478042ea94dace631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
