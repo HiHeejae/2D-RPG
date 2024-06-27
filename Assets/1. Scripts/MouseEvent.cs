@@ -6,6 +6,7 @@ public class MouseEvent : MonoBehaviour
 {
     public GameObject Potion_UI;
     public GameObject Power_UI;
+    public GameObject Battle_UI;
     void Update()
     {
         MouseClick();
@@ -30,7 +31,7 @@ public class MouseEvent : MonoBehaviour
                 }
                 else if (hit.collider.gameObject.name == "BattleNPC")
                 {
-                    Debug.Log("Battle NPC º±≈√");
+                    Battle_UI.SetActive(true);
                 }
             }
         }
