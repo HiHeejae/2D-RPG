@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StorManager : MonoBehaviour
+public class StoreManager : MonoBehaviour
 {
     public InventoryItemData[] items;
     public GameObject Purchase_UI;
@@ -13,6 +13,7 @@ public class StorManager : MonoBehaviour
     public Text ItemExplainText;
 
     private Dictionary<string, InventoryItemData> itemDictionary;
+    private string SelectedItemID;
 
     public void Start()
     {
@@ -21,8 +22,6 @@ public class StorManager : MonoBehaviour
         {
             itemDictionary[item.ItemID] = item;
         }
-
-        Debug.Log("윤희재는 살아있다");
     }
 
     public void SelectItem(string itemID)
@@ -34,10 +33,33 @@ public class StorManager : MonoBehaviour
             ItemNameText.text = selectedItem.ItemName;
             ItemCoinText.text = $"({selectedItem.ItemPrice:N0} Point)";
             ItemExplainText.text = selectedItem.ItemDescription;
+
+            SelectedItemID = itemID;
         }
         else
         {
             Debug.LogError("Item ID not found: " + itemID);
+        }
+    }
+
+    public void Purchase()
+    {
+        InventoryItemData selectedItem = itemDictionary[SelectedItemID];
+        if (GameManager.Instance.Coin >= selectedItem.ItemPrice)
+        {
+            if (BackPackManager.Instance.AddItem(selectedItem))
+            {
+                GameManager.Instance.Coin -= selectedItem.ItemPrice;
+                Debug.Log("성공");
+            }
+            else
+            {
+                Debug.Log("BackPack에 빈 공간이 없습니다.");
+            }
+        }
+        else
+        {
+            Debug.Log($"잔액이 부족합니다. 잔액 : {GameManager.Instance.Coin}");
         }
     }
 }
